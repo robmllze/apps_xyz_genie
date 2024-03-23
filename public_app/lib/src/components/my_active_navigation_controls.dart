@@ -1,11 +1,9 @@
 //.title
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
-// X|Y|Z & Dev
+// 🇽🇾🇿 & Dev
 //
-// Copyright Ⓒ Robert Mollentze, xyzand.dev
-//
-// Licensing details can be found in the LICENSE file in the root directory.
+// Licencing details are in the LICENSE file in the root directory.
 //
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
@@ -26,23 +24,18 @@ class MyActiveNavigationControls extends StatefulWidget {
   //
 
   @override
-  State<MyActiveNavigationControls> createState() =>
-      _MyActiveNavigationControlsState();
+  State<MyActiveNavigationControls> createState() => _MyActiveNavigationControlsState();
 }
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-class _MyActiveNavigationControlsState
-    extends State<MyActiveNavigationControls> {
+class _MyActiveNavigationControlsState extends State<MyActiveNavigationControls> {
   //
   //
   //
 
   late var _selectedIndex = options.entries.toList().indexWhere(
-        (e) =>
-            app.routeManager.pScreenBreadcrumbs.value.first.configuration
-                ?.path ==
-            e.value.path,
+        (e) => app.routeManager.pScreenBreadcrumbs.value.first.configuration?.path == e.value.path,
       );
 
   final options = <String, ModelScreenConfiguration>{
@@ -68,18 +61,16 @@ class _MyActiveNavigationControlsState
         child: Row(
           children: [
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
               child: Builder(
                 builder: (context) {
                   final selected = this._selectedIndex == 0;
                   return TextButton.icon(
                     style: ElevatedButton.styleFrom(
-                      textStyle:
-                          Theme.of(context).textTheme.titleMedium?.copyWith(
-                                color: Theme.of(context).colorScheme.background,
-                                fontWeight: FontWeight.bold,
-                              ),
+                      textStyle: Theme.of(context).textTheme.titleMedium?.copyWith(
+                            color: Theme.of(context).colorScheme.background,
+                            fontWeight: FontWeight.bold,
+                          ),
                       foregroundColor: Theme.of(context)
                           .colorScheme
                           .background
@@ -101,8 +92,7 @@ class _MyActiveNavigationControlsState
             ),
             Expanded(
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
                 child: Wrap(
                   alignment: WrapAlignment.spaceEvenly,
                   children: options.entries.skip(1).mapi(
