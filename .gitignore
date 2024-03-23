@@ -1,0 +1,14 @@
+# macOS
+**/.DS_Store
+
+# Dart & Flutter
+**/.dart_tool
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.metadata
+**/build
+**/pubspec.lock
+
+# Firebase
+**/.firebase
+**/firebase-debug.log
